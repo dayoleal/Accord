@@ -2,20 +2,27 @@
 //  ContentView.swift
 //  Accord
 //
-//  Created by Dayô Araújo on 14/07/25.
+//  Created by Dayô Araújo on 15/07/25.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @State private var searchText: String = ""
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ScrollView (.vertical) {
+                VStack (spacing: 50){
+                    PerfumeScrollView(cards: cards)
+                    
+                    FamilyScrollView(families: families)
+                    
+                    NoteScrollView(notes: notes)
+                }
+            }
+            .searchable(text: $searchText)
+            .padding(.top)
         }
-        .padding()
     }
 }
 

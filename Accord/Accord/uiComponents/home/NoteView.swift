@@ -13,7 +13,7 @@ struct NoteView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 14)
-                .frame(width: 100, height: 100)
+                .frame(width: 120, height: 120)
                 .foregroundStyle(.deepPurple)
             Image(note.image)
                 .resizable()
@@ -23,5 +23,5 @@ struct NoteView: View {
 }
 
 #Preview {
-    NoteView(note: NoteCard(image: "rose", width: 75, height: 75))
+    NoteView(note: NoteCard(image: "rose", width: 85, height: 85))
 }

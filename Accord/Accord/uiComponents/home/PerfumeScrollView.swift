@@ -11,18 +11,20 @@ struct PerfumeScrollView: View {
     var cards: [Card]
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 0.2) {
+        VStack (alignment: .leading, spacing: 0.1) {
             Text("Explorar Perfumes")
-                .font(.title)
-                .fontWeight(.semibold)
+                .font(.title2)
+                .fontWeight(.bold)
                 .padding(.leading, 30)
             
             ScrollView (.horizontal) {
-                HStack (spacing: 10) {
+                HStack (spacing: 15) {
                     ForEach(cards, id: \.id ) { card in
                         CardView(card: card)
                     }
-                }.padding(.leading, 30)
+                }
+                .padding(.leading, 30)
+                .padding(.trailing, 30)
             }
             .scrollIndicators(.hidden)
         }

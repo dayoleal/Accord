@@ -14,12 +14,12 @@ struct NoteCard {
 }
 
 var notes: [NoteCard] = [
-    NoteCard(image: "orchid", width: 80, height: 80),
-    NoteCard(image: "peach", width: 80, height: 80),
-    NoteCard(image: "rose", width: 75, height: 75),
-    NoteCard(image: "musk", width: 80, height: 80),
-    NoteCard(image: "wood", width: 80, height: 80),
-    NoteCard(image: "vanilla", width: 75, height: 75),
+    NoteCard(image: "orchid", width: 90, height: 90),
+    NoteCard(image: "peach", width: 90, height: 90),
+    NoteCard(image: "rose", width: 85, height: 85),
+    NoteCard(image: "musk", width: 90, height: 90),
+    NoteCard(image: "wood", width: 90, height: 90),
+    NoteCard(image: "vanilla", width: 85, height: 85),
 //    NoteCard(note: "apriocot", width: 0.23, height: 0.13),
-    NoteCard(image: "amber", width: 75, height: 75)
+    NoteCard(image: "amber", width: 85, height: 85)
 ]

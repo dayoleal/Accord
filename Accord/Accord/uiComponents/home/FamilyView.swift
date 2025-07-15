@@ -13,7 +13,7 @@ struct FamilyView: View {
         ZStack{
             Image(family.image)
                 .resizable()
-                .frame(width: 280, height: 200)
+                .frame(width: 300, height: 230)
             HStack {
                 ZStack {
                     RoundedRectangle(cornerRadius: 40)
@@ -21,10 +21,10 @@ struct FamilyView: View {
                         .foregroundStyle(.neonYellow)
                     Text(family.name)
                         .font(.title3)
-                        .fontWeight(.bold)
+                        .fontWeight(.semibold)
                 }
-                .padding(.trailing, 90)
-                .padding(.top, 130)
+                .padding(.trailing, 120)
+                .padding(.top, 160)
             }
         }
     }
