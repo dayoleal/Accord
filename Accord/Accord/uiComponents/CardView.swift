@@ -3,7 +3,7 @@
 //  Accord
 //
 //  Created by Dayô Araújo on 14/07/25.
-//
+// 
 
 import Foundation
 import SwiftUI

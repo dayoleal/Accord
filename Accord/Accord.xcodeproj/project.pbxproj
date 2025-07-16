@@ -10,9 +10,22 @@
 		84D162032E25668300F727DB /* Accord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		84B2FA762E281E4A00A06BCD /* Exceptions for "Accord" folder in "Accord" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ReviewDataModel.swift,
+			);
+			target = 84D162022E25668300F727DB /* Accord */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		84D162052E25668300F727DB /* Accord */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				84B2FA762E281E4A00A06BCD /* Exceptions for "Accord" folder in "Accord" target */,
+			);
 			path = Accord;
 			sourceTree = "<group>";
 		};

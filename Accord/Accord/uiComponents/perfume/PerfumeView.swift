@@ -14,7 +14,7 @@ struct PerfumeView: View {
             VStack (spacing: 20){
                 
                 PerfumeBannerView(perfume: perfume)
-                
+                 
                 ZStack {
                     Group {
                         Rectangle()

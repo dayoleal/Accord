@@ -70,20 +70,3 @@ var cards: [Card] = [
         width: 150,
         height: 200)
 ]
-
-
-struct Family {
-    var id: UUID = UUID()
-    var image: String
-    var name: String
-}
-
-var families: [Family] = [
-    Family(image: "fruity", name: "Frutado"),
-    Family(image: "floral", name: "Floral"),
-    Family(image: "citric", name: "Cítrico"),
-    Family(image: "aromatic", name: "Aromático"),
-    Family(image: "spicy", name: "Especiado"),
-    Family(image: "woody", name: "Amadeirado"),
-    Family(image: "gourmand", name: "Gourmand")
-]

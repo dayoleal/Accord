@@ -10,26 +10,31 @@ import SwiftUI
 struct FamilyView: View {
     var family: Family
     var body: some View {
-        ZStack{
-            Image(family.image)
-                .resizable()
-                .frame(width: 300, height: 230)
-            HStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 40)
-                        .frame(width: 130, height: 25)
-                        .foregroundStyle(.neonYellow)
-                    Text(family.name)
-                        .font(.title3)
-                        .fontWeight(.semibold)
+        NavigationLink {
+            FamilyDisplayView(family: family)
+        } label: {
+            ZStack{
+                Image(family.image)
+                    .resizable()
+                    .frame(width: 300, height: 230)
+                HStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 40)
+                            .frame(width: 130, height: 25)
+                            .foregroundStyle(.neonYellow)
+                        Text(family.name)
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.black)
+                    }
+                    .padding(.trailing, 120)
+                    .padding(.top, 160)
                 }
-                .padding(.trailing, 120)
-                .padding(.top, 160)
             }
         }
     }
 }
 
 #Preview {
-    FamilyView(family: Family(image: "fruity", name: "Frutado"))
+    FamilyView(family: Family(image: "fruity", name: "Frutado", trailing: 200))
 }
