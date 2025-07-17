@@ -9,7 +9,7 @@ public class ReviewDataModel: ObservableObject {
     }
     
     func createReview(title: String, sillage: Double, season: String, projection: Double, name: String, desc: String) {
-        let result = CoreDataController.shared.createReview(title: <#T##String#>, sillage: <#T##Double#>, season: <#T##String#>, projection: <#T##Double#>, name: <#T##String#>, desc: <#T##String#>)
+        let result = CoreDataController.shared.createReview(title: title, sillage: sillage, season: season, projection: projection, name: name, desc: desc)
         self.reviews.append(result)
     }
     
