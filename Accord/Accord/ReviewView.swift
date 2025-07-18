@@ -11,6 +11,7 @@ struct ReviewView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel = ReviewDataModel()
     
+    //variáveis que armazenam os dados do formulário
     @State var title: String = ""
     @State var sillage: Double = 0
     @State var season: String = ""
@@ -46,7 +47,7 @@ struct ReviewView: View {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Salvar") {
                             viewModel.createReview(title: title, sillage: sillage, season: season, projection: projection, name: name, desc: desc)
-                            
+                            //salva os dados da resenha
                             dismiss()
                         }
                         .padding(.trailing, 8)
@@ -57,7 +58,7 @@ struct ReviewView: View {
                     
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancelar") {
-                            dismiss()
+                            dismiss() //fecha a tela sem salvar
                         }
                         .padding(.leading, 8)
                         .foregroundStyle(.color)
