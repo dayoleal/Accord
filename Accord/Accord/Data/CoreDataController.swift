@@ -17,7 +17,7 @@ class CoreDataController {
     }
     
     private init() {
-        persistentContainer = NSPersistentContainer(name: "Model")
+        persistentContainer = NSPersistentContainer(name: "ReviewModel")
         
         persistentContainer.loadPersistentStores { _, error in
             if let error = error {
