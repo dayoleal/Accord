@@ -12,23 +12,13 @@ struct PerfumeInfoView: View {
     
     var body: some View {
         VStack (alignment: .leading, spacing: 20) {
-            
                 HStack {
                     Text(perfume.name)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     
                     Spacer()
-                    
-                    Image(systemName: "plus")
-                        .foregroundStyle(.black)
-                        .bold()
-                        .font(.system(size: 20))
-                        .padding(10)
-                        .background(
-                            Circle()
-                                .foregroundStyle(.neonYellow)
-                        )
+                        AddButton()
                 }
                 .padding(.trailing, 40)
             

@@ -16,6 +16,7 @@ struct FamilyView: View {
             ZStack{
                 Image(family.image)
                     .resizable()
+                    .clipShape(RoundedRectangle(cornerRadius: 14))
                     .frame(width: 300, height: 230)
                 HStack {
                     ZStack {
@@ -36,5 +37,5 @@ struct FamilyView: View {
 }
 
 #Preview {
-    FamilyView(family: Family(image: "fruity", name: "Frutado", trailing: 200))
+    FamilyView(family: Family(image: "fruity.dy", name: "Frutado", trailing: 200))
 }

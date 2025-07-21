@@ -11,13 +11,16 @@ struct FamilyDisplayView: View {
     var family: Family
     
     var body: some View {
-        VStack {
-            ScrollView (.vertical) {
-                FamilyBannerView(family: family)
-                
-                PerfumeSection()
+        NavigationStack {
+            VStack {
+                ScrollView (.vertical) {
+                    FamilyBannerView(family: family)
+                    
+                    PerfumeSection()
+                }
+                .padding(.bottom, 10)
+                .scrollIndicators(.hidden)
             }
-            .scrollIndicators(.hidden)
             .ignoresSafeArea()
         }
     }

@@ -11,14 +11,16 @@ struct NoteDisplayView: View {
     var note: NoteCard
     
     var body: some View {
-        VStack {
-            ScrollView (.vertical) {
-                NoteBannerView(note: note)
-                
-                PerfumeSection()
+        NavigationStack {
+            VStack {
+                ScrollView (.vertical) {
+                    NoteBannerView(note: note)
+                    
+                    PerfumeSection()
+                }
             }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 

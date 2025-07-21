@@ -4,7 +4,7 @@
 //
 //  Created by Dayô Araújo on 14/07/25.
 //
-
+import SwiftUI
 import Foundation
 
 struct Card {
@@ -69,4 +69,11 @@ var cards: [Card] = [
         heart: ["vanilla", "amber"],
         width: 150,
         height: 200)
+]
+
+var perfumeNames: [String] = [
+    "Tainted Love",
+    "Serrasins",
+    "Feerie",
+    "Soir de Lune"
 ]

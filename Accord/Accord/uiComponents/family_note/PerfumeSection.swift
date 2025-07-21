@@ -15,12 +15,14 @@ struct PerfumeSection: View {
                     CardView(card: card)
                 }
             }
+            .padding(.bottom, 100)
             
             VStack (spacing: 0){
                 ForEach(cards, id: \.id ) { card in
                     CardView(card: card)
                 }
             }
+            .padding(.bottom, 100)
         }
     }
 }

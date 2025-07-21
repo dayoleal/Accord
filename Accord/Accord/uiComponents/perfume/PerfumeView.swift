@@ -10,29 +10,33 @@ import SwiftUI
 struct PerfumeView: View {
     var perfume : Card
     var body: some View {
-        ScrollView {
-            VStack (spacing: 20){
-                
-                PerfumeBannerView(perfume: perfume)
-                 
-                ZStack {
-                    Group {
-                        Rectangle()
-                            .clipShape(
-                                .rect(
-                                    topLeadingRadius: 50,
-                                    bottomLeadingRadius: 0,
-                                    bottomTrailingRadius: 0,
-                                    topTrailingRadius: 50
-                                )
-                            )
-                            .foregroundStyle(.deepPurple)
-                            .ignoresSafeArea()
-                    }
+        NavigationStack {
+            ScrollView {
+                VStack (spacing: 20){
                     
-                    PerfumeInfoView(perfume: perfume)
+                    PerfumeBannerView(perfume: perfume)
+                    
+                    ZStack {
+                        Group {
+                            Rectangle()
+                                .clipShape(
+                                    .rect(
+                                        topLeadingRadius: 50,
+                                        bottomLeadingRadius: 0,
+                                        bottomTrailingRadius: 0,
+                                        topTrailingRadius: 50
+                                    )
+                                )
+                                .foregroundStyle(.deepPurple)
+                                .ignoresSafeArea()
+                        }
+                        
+                        PerfumeInfoView(perfume: perfume)
+                            .padding(.bottom, 50)
+                    }
                 }
             }
+            .padding(.top, 70)
             .ignoresSafeArea()
         }
     }

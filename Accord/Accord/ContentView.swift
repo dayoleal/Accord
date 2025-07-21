@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var searchText: String = ""
     var body: some View {
-        NavigationStack {
-            ScrollView (.vertical) {
-                VStack (spacing: 50){
-                    PerfumeScrollView(cards: cards)
-                    
-                    FamilyScrollView(families: families)
-                    
-                    NoteScrollView(notes: notes)
+        TabView {
+            HomeView()
+                .tabItem {
+                    Label("Início", systemImage: "list.dash")
                 }
-            }
-            .searchable(text: $searchText)
-            .padding(.top)
+            
+            ReviewView()
+                .tabItem {
+                    Label("Review", systemImage: "square.and.pencil")
+                }
+            
+            ReviewList()
+                .tabItem {
+                    Label("Lista", systemImage: "list.dash")
+                }
         }
     }
 }
