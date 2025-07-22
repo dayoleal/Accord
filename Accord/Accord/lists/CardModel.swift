@@ -7,7 +7,7 @@
 import SwiftUI
 import Foundation
 
-struct Card {
+struct Card: Identifiable {
     var id: UUID = UUID()
     var perfume: String
     var name: String
@@ -21,6 +21,7 @@ struct Card {
     var height: CGFloat
 }
 
+
 var cards: [Card] = [
     Card(
         perfume: "soir",
@@ -31,8 +32,8 @@ var cards: [Card] = [
         top: ["rose", "orchid"],
         middle: ["musk"],
         heart: ["vanilla", "amber"],
-        width: 150,
-        height: 245),
+        width: 110,
+        height: 200),
     
     Card(
         perfume: "serrasins",
@@ -43,8 +44,8 @@ var cards: [Card] = [
         top: ["rose", "orchid"],
         middle: ["musk"],
         heart: ["vanilla", "amber"],
-        width: 150,
-        height: 220),
+        width: 110,
+        height: 180),
     
     Card(
         perfume: "feerie",
@@ -55,8 +56,8 @@ var cards: [Card] = [
         top: ["rose", "orchid"],
         middle: ["musk"],
         heart: ["vanilla", "amber"],
-        width: 120,
-        height: 200),
+        width: 100,
+        height: 180),
     
     Card(
         perfume: "tainted",
@@ -67,13 +68,58 @@ var cards: [Card] = [
         top: ["rose", "orchid"],
         middle: ["musk"],
         heart: ["vanilla", "amber"],
-        width: 150,
-        height: 200)
+        width: 110,
+        height: 160),
+    
+    Card(
+    perfume: "poison",
+    name: "Poison",
+    brand: "Dior",
+    description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.", accord: ["fruity.sy", "gourmand.sy", "woody.sy"],
+    top: ["rose", "orchid"],
+    middle: ["musk"],
+    heart: ["vanilla", "amber"],
+    width: 110,
+    height: 215),
+
+    Card(
+    perfume: "plum",
+    name: "Plum de Velours",
+    brand: "Superfumist",
+    description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.", accord: ["fruity.sy", "citric.sy", "woody.sy"],
+    top: ["rose", "orchid"],
+    middle: ["musk"],
+    heart: ["vanilla", "amber"],
+    width: 100,
+    height: 175),
+
+    Card(
+    perfume: "black",
+    name: "Black Perfecto",
+    brand: "Guerlain",
+    description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.", accord: ["floral.sy", "gourmand.sy", "aromatic.sy"],
+    top: ["rose", "orchid"],
+    middle: ["musk"],
+    heart: ["vanilla", "amber"],
+    width: 110,
+    height: 175),
+
+
+    Card(
+    perfume: "queen",
+    name: "Queen of Silk",
+    brand: "Creed",
+    description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.", accord: ["floral.sy", "gourmand.sy", "fruity.sy"],
+    top: ["rose", "orchid"],
+    middle: ["musk"],
+    heart: ["vanilla", "amber"],
+    width: 110,
+    height: 175)
 ]
 
 var perfumeNames: [String] = [
-    "Tainted Love",
+    "Soir de Lune",
     "Serrasins",
     "Feerie",
-    "Soir de Lune"
+    "Tainted Love"
 ]

@@ -9,12 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText: String = ""
-    @FocusState var isFocused: Bool
 
     var body: some View {
         NavigationStack {
             ScrollView (.vertical) {
                 VStack (spacing: 50){
+                    
                     PerfumeScrollView(cards: cards)
                     
                     FamilyScrollView(families: families)
@@ -22,7 +22,7 @@ struct HomeView: View {
                     NoteScrollView(notes: notes)
                 }
             }
-            .padding(.top)
+            .padding(.top, 15)
         }
         .scrollIndicators(.hidden)
         .searchable(text: $searchText, prompt: "Procure por um perfume")

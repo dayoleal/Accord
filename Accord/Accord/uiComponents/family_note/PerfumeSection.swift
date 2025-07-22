@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PerfumeSection: View {
     var body: some View {
-        HStack (spacing: 20){
+        HStack (spacing: 45){
             VStack (spacing: 0){
                 ForEach(cards, id: \.id ) { card in
                     CardView(card: card)

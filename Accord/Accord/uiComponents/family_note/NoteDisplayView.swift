@@ -21,6 +21,7 @@ struct NoteDisplayView: View {
             }
             .ignoresSafeArea()
         }
+        .tint(Color.white)
     }
 }
 

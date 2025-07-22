@@ -25,6 +25,7 @@ struct NoteScrollView: View {
                 }
                 .padding(.leading, 30)
                 .padding(.trailing, 30)
+                .padding(.bottom, 30)
             }
             .scrollIndicators(.hidden)
         }

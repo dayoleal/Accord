@@ -27,7 +27,7 @@ struct CardView: View {
                                 topTrailingRadius: 16
                             )
                         )
-                        .frame(width: 170, height: 150)
+                        .frame(width: 130, height: 110)
                         .foregroundStyle(.lilac)
                         .padding(.top, 150)
                     
@@ -58,6 +58,6 @@ struct CardView: View {
         top: ["rose", "orchid"],
         middle: ["musk"],
         heart: ["vanilla", "amber"],
-        width: 150,
-        height: 220))
+        width: 110,
+        height: 180))
 }

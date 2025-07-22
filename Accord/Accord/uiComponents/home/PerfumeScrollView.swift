@@ -11,7 +11,7 @@ struct PerfumeScrollView: View {
     var cards: [Card]
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 0.1) {
+        VStack (alignment: .leading, spacing: -15) {
             Text("Explorar Perfumes")
                 .font(.title2)
                 .fontWeight(.bold)
