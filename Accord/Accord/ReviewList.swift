@@ -9,53 +9,55 @@ import SwiftUI
 
 struct ReviewList: View {
     @ObservedObject var viewModel = ReviewDataModel()
-    var defaultValue = "default"
-    var defaultUnit = "unit"
+    var defaultTitle = "Título do Registro"
+    var defaultName = "Nome do Perfume"
+    var defaultDesc = "Registre as suas impressões"
+    var defaultSeason = "Verão"
+    var defaultUnit: Double = 0
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Image("back.list")
-                    .resizable()
-                    .ignoresSafeArea()
-                
-                VStack (alignment: .leading){
-                    HStack {
-                        Spacer()
-                        AddButton()
-                            .padding(.trailing, 30)
-                    }
-                    Text("Meus Registros")
-                        .font(.title)
-                        .bold()
-                        .padding(.leading, 30)
-                    
-                    List {
-                        ForEach(viewModel.reviews, id: \.id) { review in
-                            NavigationLink{
-                                HomeView()
-                            } label: {
-                                Text("\(review.title ?? defaultValue)")
+            VStack {
+                List(viewModel.reviews) { review in
+                    HStack(alignment: .center) {
+                        NavigationLink {
+                            ReviewView(title: review.title ?? defaultTitle, sillage: review.sillage, season: review.season ?? defaultSeason, projection: review.projection, name: review.name ?? defaultName, desc: review.desc ?? defaultDesc)
+                            
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text(review.title ?? "No title found.")
+                                    .bold()
                             }
-                            //Delete Review
-                            .swipeActions(content: {
-                                Button(role: .destructive, action: {
-                                    viewModel.deleteReview(review)
-                                }, label: {
-                                    Image(systemName: "trash")
-                                })
-                            })
+                            .padding(.leading, 5)
                         }
                     }
-                    .opacity(0.85)
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            viewModel.deleteReview(review)
+                        } label: {
+                            Image(systemName: "trash")
+                        }
+                    }
+                }
+                .scrollContentBackground(.hidden)
+                .listStyle(.insetGrouped)
+            }
+            .navigationTitle("Meus Registros")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    AddButton()
                 }
             }
-            .onAppear() {
+            .onAppear {
                 viewModel.getReview()
             }
+            .background(
+                Image("back.list")
+            )
         }
     }
 }
+
 
 
 #Preview {

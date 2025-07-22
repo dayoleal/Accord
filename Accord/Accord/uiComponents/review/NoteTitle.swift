@@ -7,8 +7,8 @@
 import SwiftUI
 
 struct NoteTitle: View {
-    @State var title: String
-    @State var name: String
+    @Binding var title: String
+    @Binding var name: String
     
     var body: some View {
         VStack {

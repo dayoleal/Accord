@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SliderView: View {
-    @State var data: Double
+    @Binding var data: Double
     var size: CGFloat
     var spacing: CGFloat
     var name: String

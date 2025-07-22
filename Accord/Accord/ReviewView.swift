@@ -24,11 +24,11 @@ struct ReviewView: View {
             ScrollView (.vertical){
                 VStack (alignment: .leading, spacing: 35){
                     
-                    NoteTitle(title: title, name: name)
+                    NoteTitle(title: $title, name: $name)
                     
-                    SliderView(data: projection, size: 17, spacing: 30, name: "Projeção", image1: "wave.3.up", image2: "wave.3.up")
+                    SliderView(data: $projection, size: 17, spacing: 30, name: "Projeção", image1: "wave.3.up", image2: "wave.3.up")
                     
-                    SliderView(data: sillage, size: 20, spacing: 47, name: "Fixação", image1: "hourglass.tophalf.fill", image2: "hourglass.bottomhalf.filled")
+                    SliderView(data: $sillage, size: 20, spacing: 47, name: "Fixação", image1: "hourglass.tophalf.fill", image2: "hourglass.bottomhalf.filled")
                     
                     SeasonButtonView(selected: $season)
                     
@@ -70,11 +70,12 @@ struct ReviewView: View {
                 Image("back.note")
             )
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    ReviewView()
+    ReviewView(title: "titulo", sillage: 3, season: "Inverno", projection: 2, name: "nome", desc: "desc")
 }
 
 
