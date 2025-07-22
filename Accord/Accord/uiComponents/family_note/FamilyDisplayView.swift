@@ -23,6 +23,7 @@ struct FamilyDisplayView: View {
             }
             .ignoresSafeArea()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
