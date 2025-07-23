@@ -13,7 +13,7 @@ struct SeasonButton: View {
     var size: CGFloat
     var padding: CGFloat
     
-    var isSelected: Bool {
+    var isSelected: Bool { 
         selected == season
     }
   
