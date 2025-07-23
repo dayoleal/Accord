@@ -9,11 +9,29 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var searchText: String = ""
-
+    @State private var navigateToSearch = false
+    
     var body: some View {
         NavigationStack {
             ScrollView (.vertical) {
-                VStack (spacing: 50){
+                VStack (spacing: 35){
+                    
+                    NavigationLink {
+                        SearchView()
+                    } label: {
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundStyle(.white)
+                            Text("Procure por um perfume")
+                                .foregroundColor(.white)
+                                .fontWeight(.regular)
+                            Spacer()
+                        }
+                        .padding(10)
+                        .background(RoundedRectangle(cornerRadius: 14).fill(Color(.deepPurple)))
+                        .padding(.trailing, 25)
+                        .padding(.leading, 25)
+                    }
                     
                     PerfumeScrollView(cards: cards)
                     
@@ -22,10 +40,9 @@ struct HomeView: View {
                     NoteScrollView(notes: notes)
                 }
             }
-            .padding(.top, 15)
         }
         .scrollIndicators(.hidden)
-        .searchable(text: $searchText, prompt: "Procure por um perfume")
+        .padding(.top)
     }
 }
 

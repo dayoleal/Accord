@@ -11,8 +11,8 @@ struct PerfumeNotesView: View {
     var perfume : Card
     
     var body: some View {
-        VStack (alignment: .leading){
-            HStack {
+        VStack (alignment: .leading, spacing: 40){
+            HStack (spacing: 50){
                 Text("Topo:")
                 ForEach(perfume.top, id: \.self) { note in
                     Image(note)
@@ -21,7 +21,7 @@ struct PerfumeNotesView: View {
                 }
             }
             
-            HStack {
+            HStack (spacing: 50){
                 Text("Meio:")
                 ForEach(perfume.middle, id: \.self) { note in
                     Image(note)
@@ -30,7 +30,7 @@ struct PerfumeNotesView: View {
                 }
             }
             
-            HStack {
+            HStack (spacing: 50){
                 Text("Base:")
                 ForEach(perfume.heart, id: \.self) { note in
                     Image(note)

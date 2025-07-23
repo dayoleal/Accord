@@ -24,18 +24,6 @@ struct Card: Identifiable {
 
 var cards: [Card] = [
     Card(
-        perfume: "soir",
-        name: "Soir de Lune",
-        brand: "Sisley",
-        description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.",
-        accord: ["aromatic.sy", "citric.sy", "woody.sy"],
-        top: ["rose", "orchid"],
-        middle: ["musk"],
-        heart: ["vanilla", "amber"],
-        width: 110,
-        height: 200),
-    
-    Card(
         perfume: "serrasins",
         name: "Serrasins",
         brand: "Serge Lutens",
@@ -44,20 +32,30 @@ var cards: [Card] = [
         top: ["rose", "orchid"],
         middle: ["musk"],
         heart: ["vanilla", "amber"],
-        width: 110,
-        height: 180),
+        width: 130,
+        height: 200),
     
     Card(
-        perfume: "feerie",
-        name: "Feerie",
-        brand: "Van Cleef",
-        description: "Um conto olfativo cintilante de violeta, groselha preta e rosas cristalizadas. Encantadora, etérea e luminosa, é como caminhar por um jardim encantado onde fantasia e realidade se misturam em um véu de magia floral.",
-        accord: ["gourmand.sy", "spicy.sy", "fruity.sy"],
-        top: ["rose", "orchid"],
-        middle: ["musk"],
-        heart: ["vanilla", "amber"],
-        width: 100,
-        height: 180),
+    perfume: "black",
+    name: "Black Perfecto",
+    brand: "Guerlain",
+    description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.", accord: ["floral.sy", "gourmand.sy", "aromatic.sy"],
+    top: ["rose", "orchid"],
+    middle: ["musk"],
+    heart: ["vanilla", "amber"],
+    width: 120,
+    height: 185),
+    
+    Card(
+    perfume: "queen",
+    name: "Queen of Silk",
+    brand: "Creed",
+    description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.", accord: ["floral.sy", "gourmand.sy", "fruity.sy"],
+    top: ["rose", "orchid"],
+    middle: ["musk"],
+    heart: ["vanilla", "amber"],
+    width: 120,
+    height: 185),
     
     Card(
         perfume: "tainted",
@@ -68,8 +66,34 @@ var cards: [Card] = [
         top: ["rose", "orchid"],
         middle: ["musk"],
         heart: ["vanilla", "amber"],
+        width: 120,
+        height: 180),
+    
+    Card(
+        perfume: "soir",
+        name: "Soir de Lune",
+        brand: "Sisley",
+        description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.",
+        accord: ["aromatic.sy", "citric.sy", "woody.sy"],
+        top: ["rose", "orchid"],
+        middle: ["musk"],
+        heart: ["vanilla", "amber"],
+        width: 120,
+        height: 220),
+
+    
+    Card(
+        perfume: "feerie",
+        name: "Feerie",
+        brand: "Van Cleef",
+        description: "Um conto olfativo cintilante de violeta, groselha preta e rosas cristalizadas. Encantadora, etérea e luminosa, é como caminhar por um jardim encantado onde fantasia e realidade se misturam em um véu de magia floral.",
+        accord: ["gourmand.sy", "spicy.sy", "fruity.sy"],
+        top: ["rose", "orchid"],
+        middle: ["musk"],
+        heart: ["vanilla", "amber"],
         width: 110,
-        height: 160),
+        height: 185),
+    
     
     Card(
     perfume: "poison",
@@ -79,7 +103,7 @@ var cards: [Card] = [
     top: ["rose", "orchid"],
     middle: ["musk"],
     heart: ["vanilla", "amber"],
-    width: 110,
+    width: 120,
     height: 215),
 
     Card(
@@ -90,31 +114,9 @@ var cards: [Card] = [
     top: ["rose", "orchid"],
     middle: ["musk"],
     heart: ["vanilla", "amber"],
-    width: 100,
-    height: 175),
-
-    Card(
-    perfume: "black",
-    name: "Black Perfecto",
-    brand: "Guerlain",
-    description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.", accord: ["floral.sy", "gourmand.sy", "aromatic.sy"],
-    top: ["rose", "orchid"],
-    middle: ["musk"],
-    heart: ["vanilla", "amber"],
     width: 110,
-    height: 175),
-
-
-    Card(
-    perfume: "queen",
-    name: "Queen of Silk",
-    brand: "Creed",
-    description: "Fragrância intensa e envolvente que mistura rosa especiada, musgo e patchouli com um toque de mel amargo. Noturna, sofisticada e sensual, captura o mistério de um encontro sob a lua e o magnetismo das emoções à flor da pele.", accord: ["floral.sy", "gourmand.sy", "fruity.sy"],
-    top: ["rose", "orchid"],
-    middle: ["musk"],
-    heart: ["vanilla", "amber"],
-    width: 110,
-    height: 175)
+    height: 185),
+    
 ]
 
 var perfumeNames: [String] = [

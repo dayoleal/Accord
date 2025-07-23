@@ -21,10 +21,10 @@ struct PerfumeView: View {
                             Rectangle()
                                 .clipShape(
                                     .rect(
-                                        topLeadingRadius: 50,
+                                        topLeadingRadius: 40,
                                         bottomLeadingRadius: 0,
                                         bottomTrailingRadius: 0,
-                                        topTrailingRadius: 50
+                                        topTrailingRadius: 40
                                     )
                                 )
                                 .foregroundStyle(.deepPurple)
@@ -36,8 +36,6 @@ struct PerfumeView: View {
                     }
                 }
             }
-            .padding(.top, 70)
-            .ignoresSafeArea()
         }
     }
 }
@@ -49,7 +47,7 @@ struct PerfumeView: View {
         name: "Serrasins",
         brand: "Serge Lutens",
         description: "fragrância construída em torno de um jasmim escuro animalizado. Com nuances de couro, especiarias e um toque resinoso, este perfume evoca a beleza perigosa da noite e o fascínio do proibido. Misterioso, opulento e ousado, é uma interpretação ousada da flor branca em seu estado mais carnal.",
-        accord: ["gourmand.sy", "spicy.sy", "fruity.sy"],
+        accord: ["gourmand.sy", "aromatic.sy", "fruity.sy"],
         top: ["rose", "orchid"],
         middle: ["musk"],
         heart: ["vanilla", "amber"],

@@ -27,7 +27,7 @@ struct CardView: View {
                                 topTrailingRadius: 16
                             )
                         )
-                        .frame(width: 130, height: 110)
+                        .frame(width: 150, height: 130)
                         .foregroundStyle(.lilac)
                         .padding(.top, 150)
                     
@@ -40,7 +40,7 @@ struct CardView: View {
                     .fontWeight(.bold)
                     .foregroundStyle(.black)
                 Text(card.brand)
-                    .fontWeight(.medium)
+                    .fontWeight(.regular)
                     .foregroundStyle(.black)
                     .italic()
             }

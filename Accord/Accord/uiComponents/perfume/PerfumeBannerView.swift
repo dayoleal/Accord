@@ -11,11 +11,11 @@ struct PerfumeBannerView: View {
     var perfume : Card
     
     var body: some View {
-        VStack {
+        VStack (spacing: 20){
             Image(perfume.perfume)
                 .resizable()
                 .frame(width: 180, height: 280)
-            HStack (spacing: 35){
+            HStack (spacing: 60){
                 ForEach(perfume.accord, id: \.self) { accord in
                     Image(accord)
                         .resizable()

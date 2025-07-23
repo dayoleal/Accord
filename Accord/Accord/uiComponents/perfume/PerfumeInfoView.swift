@@ -11,21 +11,23 @@ struct PerfumeInfoView: View {
     var perfume : Card
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 20) {
+        VStack (alignment: .leading, spacing: 30) {
+            VStack (alignment: .leading, spacing: 5){
                 HStack {
                     Text(perfume.name)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     
                     Spacer()
-                        AddButton()
+                    AddButton()
                 }
                 .padding(.trailing, 40)
-            
-            Text(perfume.brand)
-                .font(.title)
-                .italic()
-                .fontWeight(.medium)
+                
+                Text(perfume.brand)
+                    .font(.title2)
+                    .italic()
+                    .fontWeight(.regular)
+            }
             
             Text(perfume.description)
                 .font(.title3)
