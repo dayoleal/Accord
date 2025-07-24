@@ -11,7 +11,7 @@ struct NoteScrollView: View {
     var notes: [NoteCard]
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 25) {
+        VStack (alignment: .leading, spacing: 20) {
             Text("Explorar Notas olfativas")
                 .font(.title2)
                 .fontWeight(.bold)

@@ -16,11 +16,17 @@ struct NoteView: View {
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 14)
-                    .frame(width: 120, height: 120)
+                    .frame(width: 140, height: 140)
                     .foregroundStyle(.deepPurple)
-                Image(note.image)
-                    .resizable()
-                    .frame(width: note.width, height: note.height)
+                
+                VStack (spacing: -2){
+                    Image(note.image)
+                        .resizable()
+                        .frame(width: note.width, height: note.height)
+                    Text(note.name)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                }
             }
         }
     }

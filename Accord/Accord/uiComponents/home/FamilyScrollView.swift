@@ -7,30 +7,6 @@
 
 import SwiftUI
 
-//struct FamilyScrollView: View {
-//    var families: [Family]
-//    
-//    var body: some View {
-//        VStack (alignment: .leading, spacing: 25) {
-//            Text("Explorar Famílias Olfativas")
-//                .font(.title2)
-//                .fontWeight(.bold)
-//                .padding(.leading, 30)
-//            
-//            ScrollView (.horizontal) {
-//                HStack (spacing: 15) {
-//                    ForEach(families, id: \.id ) { family in
-//                        FamilyView(family: family)
-//                    }
-//                }
-//                .padding(.leading, 30)
-//                .padding(.trailing, 30)
-//            }
-//            .scrollIndicators(.hidden)
-//        }
-//    }
-//}
-
 import SwiftUI
 
 struct FamilyScrollView: View {
@@ -70,20 +46,29 @@ struct FamilyScrollView: View {
     }
     
     var body: some View {
-        ZStack {
-            ForEach(0..<families.count, id: \.self) { index in
-                let family = families[index]
-                
-                FamilyView(family: family)
-                    .scaleEffect(1.0 - abs(distance(index)) * 0.2)
-                    .opacity(1 - abs(distance(index)) * 0.3)
-                    .offset(x: xOffset(index), y: 0)
-                    .zIndex(1.0 - abs(distance(index)) * 0.1)
-                    .animation(.easeOut(duration: 0.3), value: draggingItem)
+        VStack (spacing: 10){
+            HStack {
+                Text("Famílias Olfativas")
+                    .font(.title2)
+                    .bold()
+                Spacer()
+            }.padding(.leading, 30)
+            
+            ZStack {
+                ForEach(0..<families.count, id: \.self) { index in
+                    let family = families[index]
+                    
+                    FamilyView(family: family)
+                        .scaleEffect(1.0 - abs(distance(index)) * 0.2)
+                        .opacity(1 - abs(distance(index)) * 0.3)
+                        .offset(x: xOffset(index), y: 0)
+                        .zIndex(1.0 - abs(distance(index)) * 0.1)
+                        .animation(.easeOut(duration: 0.3), value: draggingItem)
+                }
             }
+            .gesture(dragGesture())
+            .frame(height: 250)
         }
-        .gesture(dragGesture())
-        .frame(height: 250)
     }
 }
 

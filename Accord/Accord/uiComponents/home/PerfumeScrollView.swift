@@ -12,10 +12,27 @@ struct PerfumeScrollView: View {
     
     var body: some View {
         VStack (alignment: .leading, spacing: -15) {
-            Text("Explorar Perfumes")
-                .font(.title2)
-                .fontWeight(.bold)
-                .padding(.leading, 30)
+            HStack {
+                Text("Explorar Perfumes")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.leading, 30)
+                Spacer()
+                
+                NavigationLink {
+                    ReviewView()
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 40)
+                            .frame(width: 100, height: 45)
+                            .foregroundStyle(.neonYellow)
+                        Text("Review")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.black)
+                    }
+                }
+            }.padding(.trailing, 30)
             
             ScrollView (.horizontal) {
                 HStack (spacing: 15) {
@@ -28,7 +45,7 @@ struct PerfumeScrollView: View {
             }
             .scrollIndicators(.hidden)
         }
-        .padding(.top, 20)
+        .padding(.top, 40)
     }
 }
 

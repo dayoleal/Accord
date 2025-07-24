@@ -14,9 +14,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView (.vertical) {
-                VStack (spacing: 35){
-                    
-//                    ToolBarView()
+                VStack (spacing: 55){
                     
                     PerfumeScrollView(cards: cards)
                     
@@ -24,7 +22,7 @@ struct HomeView: View {
                     
                     NoteScrollView(notes: notes)
                     
-                    ReviewBannerView()
+
                 }
             }
         }
