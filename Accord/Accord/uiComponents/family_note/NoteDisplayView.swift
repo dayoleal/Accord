@@ -16,7 +16,7 @@ struct NoteDisplayView: View {
                 ScrollView (.vertical) {
                     NoteBannerView(note: note)
                     
-                    PerfumeSection()
+                    PerfumeSection(filterByNote: note.image, filterByAccord: "")
                 }
             }
             .ignoresSafeArea()

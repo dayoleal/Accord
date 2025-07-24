@@ -21,6 +21,5 @@ var notes: [NoteCard] = [
     NoteCard(image: "musk", name: "Almíscar", width: 90, height: 90),
     NoteCard(image: "wood", name: "Madeira", width: 90, height: 90),
     NoteCard(image: "vanilla", name: "Baunilha", width: 85, height: 85),
-//    NoteCard(note: "apriocot", width: 0.23, height: 0.13),
     NoteCard(image: "amber", name: "Âmbar", width: 85, height: 85)
 ]

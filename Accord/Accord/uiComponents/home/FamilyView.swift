@@ -35,5 +35,5 @@ struct FamilyView: View {
 }
 
 #Preview {
-    FamilyView(family: Family(image: "fruity.dy", name: "Frutado", trailing: 200))
+    FamilyView(family: Family(image: "fruity.dy", name: "Frutado", accord: "fruity.sy", trailing: 230))
 }

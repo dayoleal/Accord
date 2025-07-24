@@ -16,7 +16,7 @@ struct FamilyDisplayView: View {
                 ScrollView (.vertical) {
                     FamilyBannerView(family: family)
                     
-                    PerfumeSection()
+                    PerfumeSection(filterByNote: "", filterByAccord: family.accord)
                 }
                 .padding(.bottom, 10)
                 .scrollIndicators(.hidden)
@@ -27,5 +27,5 @@ struct FamilyDisplayView: View {
 }
 
 #Preview {
-    FamilyDisplayView(family: Family(image: "fruity.dy", name: "Frutado", trailing: 200))
+    FamilyDisplayView(family: Family(image: "fruity.dy", name: "Frutado", accord: "fruity.sy", trailing: 230))
 }

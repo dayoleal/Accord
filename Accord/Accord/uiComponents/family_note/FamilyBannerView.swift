@@ -48,7 +48,7 @@ struct FamilyBannerView: View {
 }
 
 #Preview {
-    FamilyBannerView(family: Family(image: "citric.dy", name: "Cítrico", trailing: 230))
+    FamilyBannerView(family: Family(image: "fruity.dy", name: "Frutado", accord: "fruity.sy", trailing: 230))
 }
 
 
