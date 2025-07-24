@@ -16,33 +16,19 @@ struct HomeView: View {
             ScrollView (.vertical) {
                 VStack (spacing: 35){
                     
-                    NavigationLink {
-                        SearchView()
-                    } label: {
-                        HStack {
-                            Image(systemName: "magnifyingglass")
-                                .foregroundStyle(.white)
-                            Text("Procure por um perfume")
-                                .foregroundColor(.white)
-                                .fontWeight(.regular)
-                            Spacer()
-                        }
-                        .padding(10)
-                        .background(RoundedRectangle(cornerRadius: 14).fill(Color(.deepPurple)))
-                        .padding(.trailing, 25)
-                        .padding(.leading, 25)
-                    }
+//                    ToolBarView()
                     
                     PerfumeScrollView(cards: cards)
                     
                     FamilyScrollView(families: families)
                     
                     NoteScrollView(notes: notes)
+                    
+                    ReviewBannerView()
                 }
             }
         }
         .scrollIndicators(.hidden)
-        .padding(.top)
     }
 }
 

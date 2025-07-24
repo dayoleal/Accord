@@ -21,7 +21,6 @@ struct NoteDisplayView: View {
             }
             .ignoresSafeArea()
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 

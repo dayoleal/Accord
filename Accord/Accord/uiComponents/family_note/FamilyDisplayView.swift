@@ -23,10 +23,9 @@ struct FamilyDisplayView: View {
             }
             .ignoresSafeArea()
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    FamilyDisplayView(family: Family(image: "fruity", name: "Frutado", trailing: 200))
+    FamilyDisplayView(family: Family(image: "fruity.dy", name: "Frutado", trailing: 200))
 }

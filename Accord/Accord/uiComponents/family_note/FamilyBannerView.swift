@@ -23,7 +23,7 @@ struct FamilyBannerView: View {
                     )
                 )
                 .ignoresSafeArea()
-                .frame(height: 220)
+                .frame(height: 250)
             
             Text(family.name)
                 .font(.largeTitle)
@@ -48,7 +48,7 @@ struct FamilyBannerView: View {
 }
 
 #Preview {
-    FamilyBannerView(family: Family(image: "fruity", name: "Frutado", trailing: 200))
+    FamilyBannerView(family: Family(image: "citric.dy", name: "Cítrico", trailing: 230))
 }
 
 

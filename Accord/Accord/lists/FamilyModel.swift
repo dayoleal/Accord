@@ -15,8 +15,8 @@ struct Family {
 }
 
 var families: [Family] = [
-    Family(image: "fruity.dy", name: "Frutado", trailing: 200),
-    Family(image: "floral.dy", name: "Floral", trailing: 240),
+    Family(image: "fruity.dy", name: "Frutado", trailing: 230),
+    Family(image: "floral.dy", name: "Floral", trailing: 260),
     Family(image: "citric.dy", name: "Cítrico", trailing: 230),
     Family(image: "aromatic.dy", name: "Aromático", trailing: 180),
     Family(image: "spicy.dy", name: "Especiado", trailing: 180),

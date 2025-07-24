@@ -12,12 +12,13 @@ struct ContentView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Início", systemImage: "list.dash")
+                    Image("perfume")
+                    Text("Início")
                 }
             
-            ReviewView()
+            SearchView()
                 .tabItem {
-                    Label("Review", systemImage: "square.and.pencil")
+                    Label("Busca", systemImage: "magnifyingglass")
                 }
             
             ReviewList()

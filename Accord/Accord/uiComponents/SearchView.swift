@@ -30,9 +30,6 @@ struct SearchView: View {
                         }
                     }
                 }
-                .background(
-                    Image("back.list")
-                )
             }
             .scrollContentBackground(.hidden)
             .searchable(text: $searchText, prompt: "Procure por um perfume")

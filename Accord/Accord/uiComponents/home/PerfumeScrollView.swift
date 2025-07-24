@@ -28,6 +28,7 @@ struct PerfumeScrollView: View {
             }
             .scrollIndicators(.hidden)
         }
+        .padding(.top, 20)
     }
 }
 
