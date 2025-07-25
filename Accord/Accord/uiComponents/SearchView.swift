@@ -16,7 +16,12 @@ struct SearchView: View {
         if searchText.isEmpty {
             return []
         } else {
-            return perfumes.filter { $0.name.localizedStandardContains(searchText) }
+            let results = perfumes.filter { card in
+                card.accordSearch.allSatisfy { $0.localizedStandardContains(searchText) } ||
+                card.name.localizedStandardContains(searchText)
+            }
+            
+            return results
         }
     }
     
