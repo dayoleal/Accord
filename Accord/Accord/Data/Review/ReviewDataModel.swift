@@ -3,7 +3,7 @@ import CoreData
 
 public class ReviewDataModel: ObservableObject {
     @Published var reviews: [Review] = []
-    
+     
     func getReview() {
         reviews = CoreDataController.shared.fetchAllReviews()
     }

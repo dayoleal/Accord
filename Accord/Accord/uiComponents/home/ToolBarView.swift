@@ -24,20 +24,6 @@ struct ToolBarView: View {
                 .padding(10)
                 .background(RoundedRectangle(cornerRadius: 14).fill(Color(.deepPurple)))
             }
-            
-//            NavigationLink {
-//                ReviewList()
-//            } label: {
-//                ZStack {
-//                    Circle()
-//                        .frame(width: 50, height: 50)
-//                        .foregroundStyle(.neonYellow)
-//                    Image(systemName: "list.bullet")
-//                        .foregroundStyle(.black)
-//                        .bold()
-//                        .font(.system(size: 22))
-//                }
-//            }
         }
         .padding(.top, 30)
         .padding(.horizontal, 25)

@@ -36,7 +36,7 @@ struct ReviewView: View {
                         .font(.title3)
                         .fontWeight(.regular)
                         .frame(width: 350)
-                        .limitInputLength(value: $desc, length: 100)
+                        .limitInputLength(value: $desc, length: 1000)
                     
                     Spacer()
                 }

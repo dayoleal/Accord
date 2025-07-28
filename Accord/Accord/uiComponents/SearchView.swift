@@ -17,7 +17,6 @@ struct SearchView: View {
             return []
         } else {
             let results = perfumes.filter { card in
-                card.accordSearch.allSatisfy { $0.localizedStandardContains(searchText) } ||
                 card.name.localizedStandardContains(searchText)
             }
             
@@ -38,6 +37,11 @@ struct SearchView: View {
             }
             .scrollContentBackground(.hidden)
             .searchable(text: $searchText, prompt: "Procure por um perfume")
+            .background(
+                Image("back.search")
+                    .resizable()
+                    .ignoresSafeArea()
+            )
         }
     }
 }
