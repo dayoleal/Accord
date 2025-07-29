@@ -16,7 +16,7 @@ struct AddButton: View {
                 .foregroundStyle(.black)
                 .bold()
                 .font(.system(size: 20))
-                .padding(10)
+                .padding(8)
                 .background(
                     Circle()
                         .foregroundStyle(.neonYellow)

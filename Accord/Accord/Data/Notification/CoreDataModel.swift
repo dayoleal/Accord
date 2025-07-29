@@ -19,7 +19,7 @@ class CoreDataModel {
     }
     
     private init() {
-        persistentContainer = NSPersistentContainer(name: "Model")
+        persistentContainer = NSPersistentContainer(name: "ReviewModel")
         persistentContainer.loadPersistentStores(completionHandler: { _, error in
             if let error = error {
                 fatalError("[ERROR]: Could not load CoreData stack (\(error.localizedDescription))")

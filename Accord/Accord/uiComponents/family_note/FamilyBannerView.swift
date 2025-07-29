@@ -23,7 +23,7 @@ struct FamilyBannerView: View {
                     )
                 )
                 .ignoresSafeArea()
-                .frame(height: 250)
+                .frame(height: 230)
             
             Text(family.name)
                 .font(.largeTitle)

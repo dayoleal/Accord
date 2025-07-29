@@ -10,6 +10,11 @@ import SwiftUI
 struct HomeView: View {
     @State private var searchText: String = ""
     @State private var navigateToSearch = false
+    @ObservedObject var viewModel = CoreDataViewModel()
+    @Environment(\.dismiss) var dismiss
+    @State var didSendNotification: Bool = false
+    @State var reminders = true
+    @State var reminderTime = Date.now
     
     var body: some View {
         NavigationStack {
@@ -22,8 +27,11 @@ struct HomeView: View {
                     
                     NoteScrollView(notes: notes)
                     
-
                 }
+            }
+            .onAppear {
+                NotificationManagerModel.requirePermissions()
+
             }
         }
         .scrollIndicators(.hidden)

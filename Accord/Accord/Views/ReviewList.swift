@@ -27,7 +27,7 @@ struct ReviewList: View {
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
-                    AddButton()
+                    NotificationButton()
                 }
             }
             .onAppear {
