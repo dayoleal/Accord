@@ -12,14 +12,11 @@ struct HomeView: View {
     @State private var navigateToSearch = false
     @ObservedObject var viewModel = CoreDataViewModel()
     @Environment(\.dismiss) var dismiss
-    @State var didSendNotification: Bool = false
-    @State var reminders = true
-    @State var reminderTime = Date.now
     
     var body: some View {
         NavigationStack {
             ScrollView (.vertical) {
-                VStack (spacing: 55){
+                VStack (spacing: 55) {
                     
                     PerfumeScrollView(cards: cards)
                     
@@ -31,7 +28,6 @@ struct HomeView: View {
             }
             .onAppear {
                 NotificationManagerModel.requirePermissions()
-
             }
         }
         .scrollIndicators(.hidden)

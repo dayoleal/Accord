@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+/// Struct that represents an olfactory note instance
 struct NoteCard {
     var id: UUID = UUID()
     var image: String
@@ -14,6 +16,7 @@ struct NoteCard {
     var height: CGFloat
 }
 
+/// List of all olfactory note categories available
 var notes: [NoteCard] = [
     NoteCard(image: "orchid", name: "Orquídea", width: 90, height: 90),
     NoteCard(image: "peach", name: "Pêssego", width: 90, height: 90),

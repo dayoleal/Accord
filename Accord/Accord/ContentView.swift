@@ -8,23 +8,39 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var loading: Bool = true
+    
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Image("perfume")
-                    Text("Início")
+        ZStack {
+            if loading {
+                LoadingView()
+                    .transition(.opacity)
+                    .zIndex(3)
+            } else {
+                TabView {
+                    HomeView()
+                        .tabItem {
+                            Image("perfume")
+                            Text("Início")
+                        }
+                    
+                    SearchView()
+                        .tabItem {
+                            Label("Busca", systemImage: "magnifyingglass")
+                        }
+                    
+                    ReviewList()
+                        .tabItem {
+                            Label("Lista", systemImage: "list.dash")
+                        }
                 }
-            
-            SearchView()
-                .tabItem {
-                    Label("Busca", systemImage: "magnifyingglass")
-                }
-            
-            ReviewList()
-                .tabItem {
-                    Label("Lista", systemImage: "list.dash")
-                }
+            }
+        }
+        .animation(.easeInOut(duration: 0.4), value: loading)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                loading = false
+            }
         }
     }
 }

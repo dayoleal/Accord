@@ -7,6 +7,8 @@
 import SwiftUI
 import Foundation
 
+
+/// Struct that represents a perfume instance
 struct Card: Identifiable {
     var id: UUID = UUID()
     var perfume: String
@@ -22,7 +24,7 @@ struct Card: Identifiable {
     var height: CGFloat
 }
 
-
+/// List of all catalog items
 var cards: [Card] = [
     Card(
         perfume: "serrasins",
@@ -130,11 +132,4 @@ var cards: [Card] = [
         width: 110,
         height: 185),
     
-]
-
-var perfumeNames: [String] = [
-    "Soir de Lune",
-    "Serrasins",
-    "Feerie",
-    "Tainted Love"
 ]

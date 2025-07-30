@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Struct that represents an olfactory family instance
 struct Family {
     var id: UUID = UUID()
     var image: String
@@ -15,6 +16,7 @@ struct Family {
     var trailing: CGFloat
 }
 
+/// List of all olfactory family categories available
 var families: [Family] = [
     Family(image: "fruity.dy", name: "Frutado", accord: "fruity.sy", trailing: 230),
     Family(image: "floral.dy", name: "Floral", accord: "floral.sy", trailing: 260),
