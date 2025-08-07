@@ -23,7 +23,7 @@ struct ReviewView: View {
         NavigationStack {
             ScrollView (.vertical){
                 VStack (alignment: .leading, spacing: 35){
-                    
+                     
                     NoteTitle(title: $title, name: $name)
                     
                     SliderView(data: $projection, size: 17, spacing: 30, name: "Projeção", image1: "wave.3.up", image2: "wave.3.up")

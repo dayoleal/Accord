@@ -16,7 +16,7 @@ struct NoteTitle: View {
                 .limitInputLength(value: $title, length: 20)
                 .font(.title)
                 .fontWeight(.medium)
-                .padding(.leading, 20)
+                .padding(.leading, 25)
                 .padding(.vertical, 7)
                 .background(
                     RoundedRectangle(cornerRadius: 20)
@@ -30,10 +30,10 @@ struct NoteTitle: View {
                 .limitInputLength(value: $name, length: 20)
                 .font(.title2)
                 .fontWeight(.medium)
-                .padding(.leading, 20)
+                .padding(.leading, 25)
                 .padding(.vertical, 7)
                 .background(
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 15)
                         .opacity(0.15)
                         .foregroundStyle(.accent)
                 )

@@ -16,7 +16,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView (.vertical) {
-                VStack (spacing: 55) {
+                VStack (spacing: 45) {
                     
                     PerfumeScrollView(cards: cards)
                     

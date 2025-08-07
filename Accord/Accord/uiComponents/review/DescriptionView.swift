@@ -12,7 +12,7 @@ struct DescriptionView: View {
     var body: some View {
         TextField("", text: $desc, prompt: Text("Registre as suas impressões").foregroundColor(.black), axis: .vertical)
             .font(.title3)
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 25)
             .padding(.vertical, 15)
             .background(
                 RoundedRectangle(cornerRadius: 20)

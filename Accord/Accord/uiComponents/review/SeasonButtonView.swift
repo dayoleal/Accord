@@ -10,7 +10,7 @@ struct SeasonButtonView: View {
     @Binding var selected: String
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 10){
+        VStack (alignment: .leading, spacing: 25){
             Text("Estação")
                 .font(.title)
                 .fontWeight(.semibold)
