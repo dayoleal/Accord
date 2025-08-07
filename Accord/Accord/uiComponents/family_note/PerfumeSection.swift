@@ -10,7 +10,11 @@ import SwiftUI
 struct PerfumeSection: View {
     var filterByNote: String
     var filterByAccord: String
-
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
         let filter = cards.filter { card in
             card.top.contains(filterByNote) ||
@@ -18,13 +22,13 @@ struct PerfumeSection: View {
             card.heart.contains(filterByNote) ||
             card.accord.contains(filterByAccord)
         }
-
-        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+        
+        LazyVGrid(columns: columns, spacing: -50) {
             ForEach(filter, id: \.id) { card in
                 CardView(card: card)
             }
         }
-        .padding(.bottom, 100)
+        .padding(EdgeInsets(top: 0, leading: 15, bottom: 100, trailing: 15))
     }
 }
 

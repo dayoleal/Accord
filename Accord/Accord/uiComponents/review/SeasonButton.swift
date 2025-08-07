@@ -12,6 +12,7 @@ struct SeasonButton: View {
     var symbol: String
     var size: CGFloat
     var padding: CGFloat
+    @State private var isPressed: Bool = false
     
     var isSelected: Bool { 
         selected == season
@@ -29,6 +30,17 @@ struct SeasonButton: View {
                     Circle()
                         .foregroundStyle(isSelected ? .deepPurple : .buttonLilac))
         }
+        .simultaneousGesture(
+                    DragGesture(minimumDistance: 0.0)
+                        .onChanged { _ in
+                            self.isPressed = true
+                        }
+                        .onEnded { _ in
+                            self.isPressed = false
+                        }
+                )
+                .scaleEffect(self.isPressed ? 0.55 : 1, anchor: .center)
+                .animation(.linear(duration: 0.3), value: isPressed)
         .frame(width: 60)
     }
 }

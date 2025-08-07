@@ -19,19 +19,7 @@ struct PerfumeScrollView: View {
                     .padding(.leading, 30)
                 Spacer()
                 
-                NavigationLink {
-                    ReviewView()
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 40)
-                            .frame(width: 100, height: 45)
-                            .foregroundStyle(.neonYellow)
-                        Text("Review")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.black)
-                    }
-                }
+                AddReview()
             }.padding(.trailing, 30)
             
             ScrollView (.horizontal) {
@@ -52,3 +40,5 @@ struct PerfumeScrollView: View {
 #Preview {
     PerfumeScrollView(cards: cards)
 }
+
+

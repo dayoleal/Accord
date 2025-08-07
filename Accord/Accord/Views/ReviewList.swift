@@ -9,25 +9,21 @@ import SwiftUI
 
 struct ReviewList: View {
     @ObservedObject var viewModel = ReviewDataModel()
-    var defaultTitle = "Título do Registro"
-    var defaultName = "Nome do Perfume"
-    var defaultDesc = "Registre as suas impressões"
-    var defaultSeason = "Verão"
+    var defaultValue = ""
     var defaultUnit: Double = 0
     
     var body: some View {
         NavigationView {
-            VStack (alignment: .leading, spacing: -10){
+            VStack (alignment: .leading, spacing: -2) {
                 Text("Meus Registros")
-                    .padding(.top, 40)
-                    .padding(.leading, 20)
-                    .font(.largeTitle)
+                    .font(.title)
                     .bold()
+                    .padding(EdgeInsets(top: 30, leading: 25, bottom: 0, trailing: 0))
                 
                 List(viewModel.reviews) { review in
                     HStack(alignment: .center) {
                         NavigationLink {
-                            ReviewView(title: review.title ?? defaultTitle, sillage: review.sillage, season: review.season ?? defaultSeason, projection: review.projection, name: review.name ?? defaultName, desc: review.desc ?? defaultDesc)
+                            ReviewView(title: review.title ?? defaultValue, sillage: review.sillage, season: review.season ?? defaultValue, projection: review.projection, name: review.name ?? defaultValue, desc: review.desc ?? defaultValue)
                             
                         } label: {
                             VStack(alignment: .leading) {
@@ -62,15 +58,14 @@ struct ReviewList: View {
             }
             .background(
                 Image("back.list")
+                    .resizable()
+                    .ignoresSafeArea()
             )
         }
     }
 }
 
 
-
 #Preview {
     ReviewList()
 }
-
-

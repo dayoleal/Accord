@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct FamilyScrollView: View {
     let families: [Family]
-    
     @State private var snappedItem: Double = 0
     @State private var draggingItem: Double = 0
     @State private var activeIndex: Int = 0
@@ -19,7 +16,6 @@ struct FamilyScrollView: View {
     private func distance(_ index: Int) -> Double {
         return (draggingItem - Double(index)).remainder(dividingBy: Double(families.count))
     }
-    
 
     private func xOffset(_ index: Int) -> Double {
         let angle = Double.pi * 2 / Double(families.count) * distance(index)
@@ -29,11 +25,11 @@ struct FamilyScrollView: View {
     private func dragGesture() -> some Gesture {
         DragGesture()
             .onChanged { value in
-                draggingItem = snappedItem + value.translation.width / 100
+                draggingItem = snappedItem + value.translation.width / 350
             }
             .onEnded { value in
                 withAnimation {
-                    draggingItem = snappedItem + value.predictedEndTranslation.width / 100
+                    draggingItem = snappedItem + value.predictedEndTranslation.width / 350
                     draggingItem = round(draggingItem).remainder(dividingBy: Double(families.count))
                     snappedItem = draggingItem
                     
@@ -60,10 +56,10 @@ struct FamilyScrollView: View {
                     
                     FamilyView(family: family)
                         .scaleEffect(1.0 - abs(distance(index)) * 0.2)
-                        .opacity(1 - abs(distance(index)) * 0.3)
+                        .opacity(1 - abs(distance(index)) * 0.5)
                         .offset(x: xOffset(index), y: 0)
                         .zIndex(1.0 - abs(distance(index)) * 0.1)
-                        .animation(.easeOut(duration: 0.3), value: draggingItem)
+                        .animation(.easeOut(duration: 0.5), value: draggingItem)
                 }
             }
             .gesture(dragGesture())

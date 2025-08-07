@@ -13,12 +13,19 @@ struct NotificationButton: View {
             NotificationView()
         } label: {
             Image(systemName: "bell")
-                .foregroundStyle(.white)
-                .font(.system(size: 20))
-                .padding(8)
+                .foregroundStyle(.black)
+                .font(.system(size: 15))
+                .fontWeight(.semibold)
+                .padding(10)
                 .background(
                     Circle()
-                        .foregroundStyle(.color)
+                        .foregroundStyle(.neonYellow)
+                        .shadow(
+                            color: Color.primary.opacity(0.3),
+                            radius: 3,
+                            x: -1,
+                            y: 2
+                        )
                 )
         }
     }

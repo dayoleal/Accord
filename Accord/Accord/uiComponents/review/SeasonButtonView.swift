@@ -14,7 +14,7 @@ struct SeasonButtonView: View {
             Text("Estação")
                 .font(.title)
                 .fontWeight(.semibold)
-            
+             
             HStack {
                 SeasonButton(selected: $selected, season: "Verão", symbol: "sun.max", size: 30, padding: 13)
                 SeasonButton(selected: $selected, season: "Inverno", symbol: "snow", size: 35, padding: 13)

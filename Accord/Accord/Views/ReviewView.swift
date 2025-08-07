@@ -32,22 +32,17 @@ struct ReviewView: View {
                     
                     SeasonButtonView(selected: $season)
                     
-                    TextField("", text: $desc, prompt: Text("Registre as suas impressões").foregroundColor(.black), axis: .vertical)
-                        .font(.title3)
-                        .fontWeight(.regular)
-                        .frame(width: 350)
-                        .limitInputLength(value: $desc, length: 1000)
+                    DescriptionView(desc: $desc)
                     
                     Spacer()
                 }
                 .padding(.leading, 25)
                 .padding(.top, 40)
-                
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Salvar") {
                             viewModel.createReview(title: title, sillage: sillage, season: season, projection: projection, name: name, desc: desc)
-                            //salva os dados da resenha
+                            
                             dismiss()
                         }
                         .padding(.trailing, 8)
@@ -58,16 +53,17 @@ struct ReviewView: View {
                     
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancelar") {
-                            dismiss() //fecha a tela sem salvar
+                            dismiss()
                         }
                         .padding(.leading, 8)
                         .foregroundStyle(.color)
                     }
                 }
-                .navigationBarTitleDisplayMode(.inline)
             }
             .background(
                 Image("back.note")
+                    .resizable()
+                    .ignoresSafeArea()
             )
         }
         .navigationBarBackButtonHidden(true)
@@ -77,8 +73,5 @@ struct ReviewView: View {
 #Preview {
     ReviewView(title: "titulo", sillage: 3, season: "Inverno", projection: 2, name: "nome", desc: "desc")
 }
-
-
-
 
 

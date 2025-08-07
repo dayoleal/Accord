@@ -36,9 +36,9 @@ struct ContentView: View {
                 }
             }
         }
-        .animation(.easeInOut(duration: 0.4), value: loading)
+        .animation(.easeInOut(duration: 0.5), value: loading)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 loading = false
             }
         }

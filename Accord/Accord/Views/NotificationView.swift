@@ -35,7 +35,9 @@ struct NotificationView: View {
                                 NotificationManagerModel.cancelScheduledNotification(scheduledNotification: scheduledNotification)
                                 viewModel.deleteScheduledNotification(scheduledNotification: scheduledNotification)
                             }
+                            
                             viewModel.scheduledNotifications.removeAll()
+                            
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 40)
@@ -46,6 +48,8 @@ struct NotificationView: View {
                                     .foregroundStyle(.white)
                             }
                         }
+                        
+                        Spacer()
                         
                         Button {
                             print(reminders)
@@ -66,13 +70,19 @@ struct NotificationView: View {
                                 RoundedRectangle(cornerRadius: 40)
                                     .frame(width: 80, height: 45)
                                     .foregroundStyle(.neonYellow)
+                                    .shadow(
+                                        color: Color.primary.opacity(0.3),
+                                        radius: 3,
+                                        x: -1,
+                                        y: 2
+                                    )
                                 Text("Salvar")
-                                //                                .font(.title3)
                                     .fontWeight(.bold)
                                     .foregroundStyle(.black)
                             }
                         }
                     }
+                    .padding(.trailing, 30)
                     Spacer()
                 }
                 .ignoresSafeArea()

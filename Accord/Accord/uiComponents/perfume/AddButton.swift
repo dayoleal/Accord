@@ -14,12 +14,18 @@ struct AddButton: View {
         } label: {
             Image(systemName: "plus")
                 .foregroundStyle(.black)
-                .bold()
-                .font(.system(size: 20))
-                .padding(8)
+                .fontWeight(.semibold)
+                .font(.system(size: 15))
+                .padding(10)
                 .background(
                     Circle()
                         .foregroundStyle(.neonYellow)
+                        .shadow(
+                            color: Color.primary.opacity(0.3),
+                            radius: 3,
+                            x: -1,
+                            y: 2
+                        )
                 )
         }
     }

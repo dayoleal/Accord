@@ -15,9 +15,9 @@ struct LoadingView: View {
             VStack (spacing: 70){
                 Image("back.load")
                     .resizable()
-                    .frame(width: 250, height: 200)
+                    .frame(width: 180, height: 145)
                 CircularProgressDemoView()
-                    .scaleEffect(1.5)
+                    .scaleEffect(1.2)
             }
         }
     }

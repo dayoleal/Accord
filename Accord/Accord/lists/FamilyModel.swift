@@ -18,7 +18,7 @@ struct Family {
 
 /// List of all olfactory family categories available
 var families: [Family] = [
-    Family(image: "fruity.dy", name: "Frutado", accord: "fruity.sy", trailing: 230),
+    Family(image: "fruity.dy", name: "Frutado", accord: "fruity.sy", trailing: 200),
     Family(image: "floral.dy", name: "Floral", accord: "floral.sy", trailing: 260),
     Family(image: "citric.dy", name: "Cítrico", accord: "citric.sy", trailing: 230),
     Family(image: "aromatic.dy", name: "Aromático", accord: "aromatic.sy", trailing: 180),

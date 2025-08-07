@@ -18,7 +18,7 @@ struct FamilyBannerView: View {
                     .rect(
                         topLeadingRadius: 0,
                         bottomLeadingRadius: 0,
-                        bottomTrailingRadius: 80,
+                        bottomTrailingRadius: 70,
                         topTrailingRadius: 0
                     )
                 )
@@ -33,7 +33,7 @@ struct FamilyBannerView: View {
                 .background(
                     Color(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 30))
-                        .opacity(0.4)
+                        .opacity(0.5)
                 )
                 .shadow(
                     color: Color.primary.opacity(3),
@@ -48,7 +48,5 @@ struct FamilyBannerView: View {
 }
 
 #Preview {
-    FamilyBannerView(family: Family(image: "fruity.dy", name: "Frutado", accord: "fruity.sy", trailing: 230))
+    FamilyBannerView(family: Family(image: "woody.dy", name: "Amadeirado", accord: "woody.sy", trailing: 140))
 }
-
-
