@@ -25,6 +25,52 @@ What started as a passion for fragrance turned into an elegant, user-friendly ap
 
 - **SwiftUI**: For developing the user interface in a modern, declarative, and responsive way.
 - **Core Data**: Object graph and persistence framework provided by Apple for managing the model layer objects in applications across Apple platforms
+- **UserNotifications**: Local reminders to register new perfumes.
+- **XCTest / XCUITest**: Unit and UI tests.
+- **DocC**: API documentation generated from the source code.
+
+## Architecture
+
+Accord follows **MVVM** with explicit dependency injection:
+
+```
+Views ──▶ ViewModels ──▶ Services (protocols) ──▶ Models
+```
+
+- **Models**: plain value types (`Card`, `Family`, `NoteCard`, `ReviewDraft`, `ReviewItem`, ...).
+- **Services**: everything that touches the outside world hides behind a protocol (`CatalogProviding`, `ReviewRepository`, `NotificationScheduling`, ...), with a Core Data / UserNotifications implementation for production and doubles for tests.
+- **ViewModels**: `@MainActor` `ObservableObject`s that hold the state of each screen and never import SwiftUI.
+- **Views**: SwiftUI views that render a view model and forward user actions to it.
+- **`AppDependencies`**: the composition root. It is created once in `AccordApp` and injected through the SwiftUI environment.
+
+```
+Accord/Accord/Accord
+├── App/            Entry point, dependency container, launch configuration
+├── Models/         Domain value types
+├── Services/       Catalog, Core Data persistence and local notifications
+├── ViewModels/     One view model per screen
+├── Views/          Screens and reusable components
+├── Accord.docc/    DocC catalog (landing page, Architecture and Testing articles)
+└── Assets.xcassets
+Accord/Accord/AccordTests     Unit tests
+Accord/Accord/AccordUITests   UI tests
+```
+
+## Tests
+
+```bash
+xcodebuild test \
+  -project Accord/Accord.xcodeproj \
+  -scheme Accord \
+  -destination 'platform=iOS Simulator,name=<a simulator installed on your Mac>'
+```
+
+Or press **⌘U** in Xcode. UI tests launch the app with the `UI_TESTING` argument, which switches it to an in-memory database and disables the splash screen and the notification permission alert.
+
+## Documentation
+
+Open the project in Xcode and choose **Product ▸ Build Documentation** (⌃⇧⌘D). The API reference is generated from the `///` comments, and the catalog also contains the *Architecture* and *Testing* articles.
+
 
  ## Contact Information
 
@@ -36,5 +82,7 @@ What started as a passion for fragrance turned into an elegant, user-friendly ap
 
 1. Clone the repository:
    ```bash
-   git clone 
-        https://github.com/dayoleal/Accord
+   git clone https://github.com/dayoleal/Accord
+   ```
+2. Open `Accord/Accord.xcodeproj` in Xcode.
+3. Select the **Accord** scheme and an iPhone simulator, then press **⌘R**.

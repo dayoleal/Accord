@@ -7,28 +7,23 @@
 
 import SwiftUI
 
+/// The search tab: a search field and the list of perfumes whose name matches it.
 struct SearchView: View {
-    @State private var searchText: String = ""
-    @FocusState var isFocused: Bool
-    var perfumes = cards
-    
-    var searchResults: [Card] {
-        if searchText.isEmpty {
-            return []
-        } else {
-            let results = perfumes.filter { card in
-                card.name.localizedStandardContains(searchText)
-            }
-            
-            return results
-        }
+
+    @StateObject private var viewModel: SearchViewModel
+
+    /// Creates the search tab.
+    ///
+    /// - Parameter viewModel: Holds the typed text and the matching perfumes.
+    init(viewModel: SearchViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(searchResults) { perfume in
+                    ForEach(viewModel.results) { perfume in
                         NavigationLink(destination: PerfumeView(perfume: perfume)) {
                             Text(perfume.name)
                         }
@@ -36,7 +31,7 @@ struct SearchView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            .searchable(text: $searchText, prompt: "Procure por um perfume")
+            .searchable(text: $viewModel.searchText, prompt: "Procure por um perfume")
             .background(
                 Image("back.search")
                     .resizable()
@@ -45,7 +40,7 @@ struct SearchView: View {
         }
     }
 }
-    
+
 #Preview {
-    SearchView()
+    SearchView(viewModel: AppDependencies.preview.makeSearchViewModel())
 }

@@ -7,16 +7,21 @@
 
 import SwiftUI
 
+/// The screen of an olfactory family: its banner followed by the perfumes that belong to it.
 struct FamilyDisplayView: View {
+
+    @Environment(\.dependencies) private var dependencies
+
+    /// The family being displayed.
     var family: Family
-    
+
     var body: some View {
         NavigationStack {
             VStack {
-                ScrollView (.vertical) {
+                ScrollView(.vertical) {
                     FamilyBannerView(family: family)
-                    
-                    PerfumeSection(filterByNote: "", filterByAccord: family.accord)
+
+                    PerfumeSection(viewModel: dependencies.makePerfumeSectionViewModel(filter: .accord(family.accord)))
                 }
                 .padding(.bottom, 10)
                 .scrollIndicators(.hidden)
@@ -27,5 +32,5 @@ struct FamilyDisplayView: View {
 }
 
 #Preview {
-    FamilyDisplayView(family: Family(image: "fruity.dy", name: "Frutado", accord: "fruity.sy", trailing: 230))
+    FamilyDisplayView(family: .sample)
 }

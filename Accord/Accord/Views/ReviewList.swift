@@ -7,27 +7,34 @@
 
 import SwiftUI
 
+/// The reviews tab: every saved review, with swipe-to-delete and buttons to add a review or manage notifications.
 struct ReviewList: View {
-    @ObservedObject var viewModel = ReviewDataModel()
-    var defaultValue = ""
-    var defaultUnit: Double = 0
-    
+
+    @Environment(\.dependencies) private var dependencies
+    @StateObject private var viewModel: ReviewListViewModel
+
+    /// Creates the reviews tab.
+    ///
+    /// - Parameter viewModel: Provides the saved reviews and deletes them.
+    init(viewModel: ReviewListViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
-        NavigationView {
-            VStack (alignment: .leading, spacing: -2) {
+        NavigationStack {
+            VStack(alignment: .leading, spacing: -2) {
                 Text("Meus Registros")
                     .font(.title)
                     .bold()
                     .padding(EdgeInsets(top: 30, leading: 25, bottom: 0, trailing: 0))
-                
+
                 List(viewModel.reviews) { review in
                     HStack(alignment: .center) {
                         NavigationLink {
-                            ReviewView(title: review.title ?? defaultValue, sillage: review.sillage, season: review.season ?? defaultValue, projection: review.projection, name: review.name ?? defaultValue, desc: review.desc ?? defaultValue)
-                            
+                            ReviewView(viewModel: dependencies.makeReviewFormViewModel(editing: review))
                         } label: {
                             VStack(alignment: .leading) {
-                                Text(review.title ?? "No title found.")
+                                Text(review.displayTitle)
                                     .bold()
                             }
                             .padding(.leading, 5)
@@ -35,12 +42,15 @@ struct ReviewList: View {
                     }
                     .swipeActions {
                         Button(role: .destructive) {
-                            viewModel.deleteReview(review)
+                            viewModel.delete(review)
                         } label: {
                             Image(systemName: "trash")
                         }
+                        .accessibilityLabel("Apagar registro")
+                        .accessibilityIdentifier(AccessibilityID.deleteReviewButton)
                     }
                 }
+                .accessibilityIdentifier(AccessibilityID.reviewList)
                 .scrollContentBackground(.hidden)
                 .listStyle(.insetGrouped)
             }
@@ -48,24 +58,24 @@ struct ReviewList: View {
                 ToolbarItem(placement: .confirmationAction) {
                     AddButton()
                 }
-                
+
                 ToolbarItem(placement: .cancellationAction) {
                     NotificationButton()
                 }
             }
             .onAppear {
-                viewModel.getReview()
+                viewModel.load()
             }
             .background(
                 Image("back.list")
                     .resizable()
                     .ignoresSafeArea()
             )
+            .errorAlert(message: $viewModel.errorMessage)
         }
     }
 }
 
-
 #Preview {
-    ReviewList()
+    ReviewList(viewModel: AppDependencies.preview.makeReviewListViewModel())
 }

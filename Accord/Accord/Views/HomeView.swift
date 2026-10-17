@@ -1,5 +1,5 @@
 //
-//  Untitled.swift
+//  HomeView.swift
 //  Accord
 //
 //  Created by Dayô Araújo on 21/07/25.
@@ -7,27 +7,33 @@
 
 import SwiftUI
 
+/// The home tab: a carousel of perfumes, the olfactory families and the olfactory notes.
 struct HomeView: View {
-    @State private var searchText: String = ""
-    @State private var navigateToSearch = false
-    @ObservedObject var viewModel = CoreDataViewModel()
-    @Environment(\.dismiss) var dismiss
-    
+
+    @StateObject private var viewModel: HomeViewModel
+
+    /// Creates the home tab.
+    ///
+    /// - Parameter viewModel: Provides the content and asks for the notification permission.
+    init(viewModel: HomeViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
         NavigationStack {
-            ScrollView (.vertical) {
-                VStack (spacing: 45) {
-                    
-                    PerfumeScrollView(cards: cards)
-                    
-                    FamilyScrollView(families: families)
-                    
-                    NoteScrollView(notes: notes)
-                    
+            ScrollView(.vertical) {
+                VStack(spacing: 45) {
+
+                    PerfumeScrollView(cards: viewModel.perfumes)
+
+                    FamilyScrollView(families: viewModel.families)
+
+                    NoteScrollView(notes: viewModel.notes)
+
                 }
             }
-            .onAppear {
-                NotificationManagerModel.requirePermissions()
+            .task {
+                await viewModel.requestNotificationPermission()
             }
         }
         .scrollIndicators(.hidden)
@@ -35,5 +41,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(viewModel: AppDependencies.preview.makeHomeViewModel())
 }

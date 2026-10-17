@@ -1,0 +1,55 @@
+//
+//  FamilyBannerView.swift
+//  Accord
+//
+//  Created by Dayô Araújo on 16/07/25.
+//
+
+import SwiftUI
+
+/// The header of ``FamilyDisplayView``: the family picture with its name over it.
+struct FamilyBannerView: View {
+
+    /// The family displayed by the banner.
+    var family: Family
+
+    var body: some View {
+        ZStack {
+            Image(family.image)
+                .resizable()
+                .clipShape(
+                    .rect(
+                        topLeadingRadius: 0,
+                        bottomLeadingRadius: 0,
+                        bottomTrailingRadius: 70,
+                        topTrailingRadius: 0
+                    )
+                )
+                .ignoresSafeArea()
+                .frame(height: 230)
+
+            Text(family.name)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(13)
+                .foregroundStyle(.neonYellow)
+                .background(
+                    Color(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                        .opacity(0.5)
+                )
+                .shadow(
+                    color: Color.primary.opacity(3),
+                    radius: 7,
+                    x: 2,
+                    y: 2
+                )
+                .padding(.top, 105)
+                .padding(.trailing, family.trailing)
+        }
+    }
+}
+
+#Preview {
+    FamilyBannerView(family: .sample)
+}
