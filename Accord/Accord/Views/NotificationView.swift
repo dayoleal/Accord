@@ -7,37 +7,39 @@
 
 import SwiftUI
 
+/// The screen where the user turns the weekly reminder on, picks its time, or turns every reminder off.
 struct NotificationView: View {
-    @ObservedObject var viewModel = CoreDataViewModel()
-    @Environment(\.dismiss) var dismiss
-    @State var didSendNotification: Bool = false
-    @State var reminders = false
-    @State var reminderTime = Date.now
-    
+
+    @Environment(\.dismiss) private var dismiss
+    @StateObject private var viewModel: NotificationSettingsViewModel
+
+    /// Creates the notification settings screen.
+    ///
+    /// - Parameter viewModel: Holds the settings and schedules the reminders.
+    init(viewModel: NotificationSettingsViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { _ in
             NavigationStack {
-                VStack (alignment: .leading, spacing: 30){
+                VStack(alignment: .leading, spacing: 30) {
                     Text("Crie notificações para não se esquecer de registrar novos perfumes!")
-                    
-                    Toggle("Notificações semanais", isOn: $reminders)
+
+                    Toggle("Notificações semanais", isOn: $viewModel.remindersEnabled)
                         .padding(.trailing, 37)
-                    
-                    if reminders{
-                        DatePicker("Time", selection: $reminderTime, displayedComponents: .hourAndMinute)
+                        .accessibilityIdentifier(AccessibilityID.remindersToggle)
+
+                    if viewModel.remindersEnabled {
+                        DatePicker("Time", selection: $viewModel.reminderTime, displayedComponents: .hourAndMinute)
                             .padding(.trailing, 37)
                             .padding(.leading, 10)
+                            .accessibilityIdentifier(AccessibilityID.reminderTimePicker)
                     }
-                    
+
                     HStack {
                         Button {
-                            for scheduledNotification in viewModel.scheduledNotifications {
-                                NotificationManagerModel.cancelScheduledNotification(scheduledNotification: scheduledNotification)
-                                viewModel.deleteScheduledNotification(scheduledNotification: scheduledNotification)
-                            }
-                            
-                            viewModel.scheduledNotifications.removeAll()
-                            
+                            viewModel.disableAll()
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 40)
@@ -48,22 +50,16 @@ struct NotificationView: View {
                                     .foregroundStyle(.white)
                             }
                         }
-                        
+                        .accessibilityIdentifier(AccessibilityID.notificationDisableButton)
+
                         Spacer()
-                        
+
                         Button {
-                            print(reminders)
-                            if reminders {
-                                let notification: NotificationModel = NotificationModel(title: "Algum perfume novo?", subtitle: "Não se esqueça de registrar os perfumes da semana", body: "")
-                                let calendar = Calendar.current
-                                let hour = calendar.component(.hour, from: reminderTime)
-                                let minute = calendar.component(.minute, from: reminderTime)
-                                
-                                NotificationManagerModel
-                                    .scheduleRepeatingNotification(notification: notification, hour: hour, minute: minute, interval: 604800)
-                                
-                                didSendNotification = true
-                                dismiss()
+                            Task {
+                                await viewModel.save()
+                                if viewModel.didSchedule {
+                                    dismiss()
+                                }
                             }
                         } label: {
                             ZStack {
@@ -81,6 +77,7 @@ struct NotificationView: View {
                                     .foregroundStyle(.black)
                             }
                         }
+                        .accessibilityIdentifier(AccessibilityID.notificationSaveButton)
                     }
                     .padding(.trailing, 30)
                     Spacer()
@@ -88,7 +85,7 @@ struct NotificationView: View {
                 .ignoresSafeArea()
                 .padding(.top, 10)
                 .onAppear {
-                    viewModel.getNotifications()
+                    viewModel.load()
                 }
                 .padding(.leading, 25)
                 .background(
@@ -96,12 +93,12 @@ struct NotificationView: View {
                         .resizable()
                         .ignoresSafeArea()
                 )
+                .errorAlert(message: $viewModel.errorMessage)
             }
         }
     }
 }
 
-
 #Preview {
-    NotificationView()
+    NotificationView(viewModel: AppDependencies.preview.makeNotificationSettingsViewModel())
 }

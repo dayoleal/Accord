@@ -6,8 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		84E0A0012E5000A00000000D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84D161FB2E25668300F727DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84D162022E25668300F727DB;
+			remoteInfo = Accord;
+		};
+		84E0A0012E5000A00000000E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84D161FB2E25668300F727DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84D162022E25668300F727DB;
+			remoteInfo = Accord;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		84D162032E25668300F727DB /* Accord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E0A0012E5000A000000001 /* AccordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E0A0012E5000A000000002 /* AccordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +48,34 @@
 			path = Accord;
 			sourceTree = "<group>";
 		};
+		84E0A0012E5000A000000003 /* AccordTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AccordTests;
+			sourceTree = "<group>";
+		};
+		84E0A0012E5000A000000004 /* AccordUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = AccordUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84D162002E25668300F727DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E0A0012E5000A000000006 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E0A0012E5000A000000009 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				84D162052E25668300F727DB /* Accord */,
+				84E0A0012E5000A000000003 /* AccordTests */,
+				84E0A0012E5000A000000004 /* AccordUITests */,
 				84D162042E25668300F727DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				84D162032E25668300F727DB /* Accord.app */,
+				84E0A0012E5000A000000001 /* AccordTests.xctest */,
+				84E0A0012E5000A000000002 /* AccordUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +130,52 @@
 			productReference = 84D162032E25668300F727DB /* Accord.app */;
 			productType = "com.apple.product-type.application";
 		};
+		84E0A0012E5000A00000000B /* AccordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E0A0012E5000A000000011 /* Build configuration list for PBXNativeTarget "AccordTests" */;
+			buildPhases = (
+				84E0A0012E5000A000000005 /* Sources */,
+				84E0A0012E5000A000000006 /* Frameworks */,
+				84E0A0012E5000A000000007 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E0A0012E5000A00000000F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				84E0A0012E5000A000000003 /* AccordTests */,
+			);
+			name = AccordTests;
+			packageProductDependencies = (
+			);
+			productName = AccordTests;
+			productReference = 84E0A0012E5000A000000001 /* AccordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84E0A0012E5000A00000000C /* AccordUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E0A0012E5000A000000012 /* Build configuration list for PBXNativeTarget "AccordUITests" */;
+			buildPhases = (
+				84E0A0012E5000A000000008 /* Sources */,
+				84E0A0012E5000A000000009 /* Frameworks */,
+				84E0A0012E5000A00000000A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E0A0012E5000A000000010 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				84E0A0012E5000A000000004 /* AccordUITests */,
+			);
+			name = AccordUITests;
+			packageProductDependencies = (
+			);
+			productName = AccordUITests;
+			productReference = 84E0A0012E5000A000000002 /* AccordUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +188,14 @@
 				TargetAttributes = {
 					84D162022E25668300F727DB = {
 						CreatedOnToolsVersion = 16.4;
+					};
+					84E0A0012E5000A00000000B = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 84D162022E25668300F727DB;
+					};
+					84E0A0012E5000A00000000C = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 84D162022E25668300F727DB;
 					};
 				};
 			};
@@ -113,12 +214,28 @@
 			projectRoot = "";
 			targets = (
 				84D162022E25668300F727DB /* Accord */,
+				84E0A0012E5000A00000000B /* AccordTests */,
+				84E0A0012E5000A00000000C /* AccordUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		84D162012E25668300F727DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E0A0012E5000A000000007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E0A0012E5000A00000000A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +252,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84E0A0012E5000A000000005 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E0A0012E5000A000000008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E0A0012E5000A00000000F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84D162022E25668300F727DB /* Accord */;
+			targetProxy = 84E0A0012E5000A00000000D /* PBXContainerItemProxy */;
+		};
+		84E0A0012E5000A000000010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84D162022E25668300F727DB /* Accord */;
+			targetProxy = 84E0A0012E5000A00000000E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		84D1620C2E25668400F727DB /* Debug */ = {
@@ -335,6 +479,80 @@
 			};
 			name = Release;
 		};
+		84E0A0012E5000A000000013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2B49H9LV4C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dayo.AccordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Accord.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Accord";
+			};
+			name = Debug;
+		};
+		84E0A0012E5000A000000014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2B49H9LV4C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dayo.AccordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Accord.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Accord";
+			};
+			name = Release;
+		};
+		84E0A0012E5000A000000015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2B49H9LV4C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dayo.AccordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Accord;
+			};
+			name = Debug;
+		};
+		84E0A0012E5000A000000016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2B49H9LV4C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dayo.AccordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Accord;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -352,6 +570,24 @@
 			buildConfigurations = (
 				84D1620F2E25668400F727DB /* Debug */,
 				84D162102E25668400F727DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E0A0012E5000A000000011 /* Build configuration list for PBXNativeTarget "AccordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E0A0012E5000A000000013 /* Debug */,
+				84E0A0012E5000A000000014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E0A0012E5000A000000012 /* Build configuration list for PBXNativeTarget "AccordUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E0A0012E5000A000000015 /* Debug */,
+				84E0A0012E5000A000000016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

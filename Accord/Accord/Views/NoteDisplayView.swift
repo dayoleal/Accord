@@ -7,16 +7,21 @@
 
 import SwiftUI
 
+/// The screen of an olfactory note: its banner followed by the perfumes that contain it.
 struct NoteDisplayView: View {
+
+    @Environment(\.dependencies) private var dependencies
+
+    /// The note being displayed.
     var note: NoteCard
-    
+
     var body: some View {
         NavigationStack {
             VStack {
-                ScrollView (.vertical) {
+                ScrollView(.vertical) {
                     NoteBannerView(note: note)
-                    
-                    PerfumeSection(filterByNote: note.image, filterByAccord: "")
+
+                    PerfumeSection(viewModel: dependencies.makePerfumeSectionViewModel(filter: .note(note.image)))
                 }
             }
             .ignoresSafeArea()
@@ -25,5 +30,5 @@ struct NoteDisplayView: View {
 }
 
 #Preview {
-    NoteDisplayView(note: NoteCard(image: "orchid", name: "Orquídea", width: 90, height: 90))
+    NoteDisplayView(note: .sample)
 }
